@@ -1,0 +1,36 @@
+{
+    "domainName": "com",
+    "companyName": "haon.tnev",
+    "useSettingsCompanyName": true,
+    "packageName": "haonstools",
+    "useSettingsProductName": true,
+    "version": "0.3.0",
+    "useSettingsVersion": true,
+    "displayName": "HaonsTools",
+    "_useSettingsProductName": true,
+    "description": "",
+    "unity": "6000.0",
+    "useCurrentUnityVersion": true,
+    "unityRelease": "24f1",
+    "useCurrentUnityRelease": true,
+    "_dependencies": [],
+    "documentationUrl": "https://",
+    "changelogUrl": "https://",
+    "licensesUrl": "",
+    "keywords": [
+        "Unity Package"
+    ],
+    "samples": [
+        {
+            "displayName": "Sample",
+            "description": "This is a sample.",
+            "path": "Samples~/Sample"
+        }
+    ],
+    "author": {
+        "name": "Haon.Tnev",
+        "useSettingsCompanyName": true,
+        "email": "author@mail.com",
+        "url": "https://"
+    }
+}

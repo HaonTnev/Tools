@@ -1,36 +1,29 @@
 {
-    "domainName": "com",
-    "companyName": "haon.tnev",
-    "useSettingsCompanyName": true,
-    "packageName": "haonstools",
-    "useSettingsProductName": true,
-    "version": "0.2.0",
-    "useSettingsVersion": true,
-    "displayName": "HaonsTools",
-    "_useSettingsProductName": true,
-    "description": "",
-    "unity": "6000.0",
-    "useCurrentUnityVersion": true,
-    "unityRelease": "24f1",
-    "useCurrentUnityRelease": true,
-    "_dependencies": [],
-    "documentationUrl": "https://",
-    "changelogUrl": "https://",
-    "licensesUrl": "",
-    "keywords": [
-        "Unity Package"
-    ],
-    "samples": [
-        {
-            "displayName": "Sample",
-            "description": "This is a sample.",
-            "path": "Samples~/Sample"
-        }
-    ],
-    "author": {
-        "name": "Haon.Tnev",
-        "useSettingsCompanyName": true,
-        "email": "author@mail.com",
-        "url": "https://"
+  "version": "0.8.0",
+  "displayName": "HaonsTools",
+  "description": "",
+  "unity": "6000.0",
+  "unityRelease": "24f1",
+  "documentationUrl": "https://",
+  "changelogUrl": "https://",
+  "licensesUrl": "",
+  "keywords": [
+    "Unity Package"
+  ],
+  "samples": [
+    {
+      "displayName": "Sample",
+      "description": "This is a sample.",
+      "path": "Samples~/Sample"
     }
+  ],
+  "author": {
+    "name": "Haon.Tnev",
+    "email": "author@mail.com",
+    "url": "https://",
+    "UseSettingsCompanyNameAsName": true
+  },
+  "name": "com.haon.tnev.haonstools",
+  "dependencies": {},
+  "hideFlags": 0
 }

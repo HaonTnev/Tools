@@ -3,11 +3,16 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Testing : Singleton<Testing>
+    public class Testing : MonoSingleton<Testing>
     {
-        public void DestroyFoo()
+        [ContextMenu("Spawn Ball")]
+        public void GetBallFromPool()
         {
-            Debug.Log("Hello from the singleton realm");
+            Debug.Log("start");
+            var ball = ObjectPool.Instance.GetItemByTag("Ball");
+            ball.transform.position = transform.position;
+            Debug.Log("finish");
         }
+   
     }
 }

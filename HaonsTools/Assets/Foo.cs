@@ -4,17 +4,11 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Foo : MonoSingleton
+    public class Foo : MonoBehaviour
     {
-        protected override void Awake()
+        private void OnCollisionEnter(Collision other)
         {
-            base.Awake();
-        }
-        private void Start()
-        {
-            Debug.Log("Hi");
-            //Testing.DestroyFoo();
-            Testing.Instance.DestroyFoo();
+            other.gameObject.SetInactive();
         }
     }
 }

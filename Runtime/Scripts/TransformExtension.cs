@@ -1,6 +1,5 @@
 using System;
 using System.Reflection;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TransformExtension : MonoBehaviour
@@ -9,7 +8,7 @@ public class TransformExtension : MonoBehaviour
     private void Start()
     {
         gameObject.GetOrAddComponent<MeshFilter>();
-        transform.GetOrAddComponent<MeshRenderer>();
+        //transform.GetOrAddComponent<MeshRenderer>();
         
         gameObject.SetInactive();
         gameObject.SetActive();
@@ -36,10 +35,10 @@ public static class Extension
         return target.AddComponent<T>();
     }
 
-    public static T GetOrAddComponent<T>(this Transform target) where T : Component
+    /*public static T GetOrAddComponent<T>(this Transform target) where T : Component
     {
         return target.TryGetComponent<T>(out T result) ? result : target.AddComponent<T>();
-    }
+    }*/
 
     public static Component GetOrAddComponent(this GameObject target, Type type) 
         =>  target.GetComponent(type) ?? target.AddComponent(type);

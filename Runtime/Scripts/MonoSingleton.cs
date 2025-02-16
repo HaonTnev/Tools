@@ -5,23 +5,25 @@ namespace Haon.Utils
     /// <summary>
     /// A singleton pattern applied to a MonoBehaviour inheritor 
     /// </summary>
-    public abstract class MonoSingleton : MonoBehaviour
+    public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
     {
         protected MonoSingleton(){} // Prevent instancing from outside of the class
         
         /// <summary>
         /// Readonly. The field to access the singleton. 
         /// </summary>
-        public static MonoSingleton Instance { get; private set; }
+        public static T Instance => _instance; 
+
+        private static T _instance;
         
         /// <summary>
         /// Overridable. Always call base.Awake to not loose singleton functionality in derived class. 
         /// </summary>
         protected virtual void Awake()
         {
-            if (Instance == null)
+            if (_instance == null)
             {
-                Instance = this;
+                _instance = this as T;
                 DontDestroyOnLoad(this.gameObject);
             }
             else

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Haon.Utils
@@ -68,5 +69,27 @@ namespace Haon.Utils
             jointDrive.positionSpring = value;
             joint.slerpDrive = jointDrive;
         }
+    }
+
+    public interface ILerpTowards
+    {
+        public IEnumerator LerpTowards(Transform toMove, Vector3 target, float duration)
+        {
+            float time = 0.0f;
+
+            while (time < duration)
+            {
+                Vector3 newPos = new Vector3();
+                newPos.x = Mathf.Lerp(toMove.position.x, target.x, time / duration);
+                newPos.y = Mathf.Lerp(toMove.position.y, target.y, time / duration);
+                newPos.z = Mathf.Lerp(toMove.position.z, target.y, time / duration);
+                
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+        }
+        
     }
 }

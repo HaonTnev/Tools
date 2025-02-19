@@ -13,7 +13,7 @@ namespace Haon.Utils
     public sealed class ObjectPool : MonoSingleton<ObjectPool>
     {
         [Header("Assign prefab and amount of objects here.\nIf amount is insufficient the pool will grow during runtime.")]
-        [SerializeField] private List<PoolItem> items;
+        [SerializeField] public List<PoolItem> items;
         private readonly List<GameObject> _pool = new();
 
         private void Start()

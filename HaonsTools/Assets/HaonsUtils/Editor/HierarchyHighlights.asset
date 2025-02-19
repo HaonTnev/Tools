@@ -15,3 +15,5 @@ MonoBehaviour:
   highlightSettings:
   - componentType: {fileID: 11500000, guid: cf9c0c13543b4835874e133229e31f18, type: 3}
     icon: {fileID: 2800000, guid: 515fa746a7a42184a997c3db86c4d53a, type: 3}
+  - componentType: {fileID: 11500000, guid: ffc1d85cd2d239d4f84158bd08e8b075, type: 3}
+    icon: {fileID: 2800000, guid: 5146fe55454d9e843917062747bb3ad9, type: 3}

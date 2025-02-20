@@ -1,7 +1,7 @@
 {
     "name": "Haon.Utils",
     "rootNamespace": "",
-    "references": [],
+    "references": ["GUID:7c82266bfad46454399edb550337d8db"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

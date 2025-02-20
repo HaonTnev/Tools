@@ -1,5 +1,5 @@
 {
-  "version": "0.9.2",
+  "version": "0.9.4",
   "displayName": "HaonsTools",
   "description": "",
   "unity": "6000.0",
@@ -24,6 +24,8 @@
     "UseSettingsCompanyNameAsName": true
   },
   "name": "com.haon.tnev.haonstools",
-  "dependencies": {},
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  },
   "hideFlags": 0
 }

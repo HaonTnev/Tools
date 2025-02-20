@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace HaonsUtils.Editor
+namespace Haon.Utils
 {
     [CreateAssetMenu(fileName = "HierarchyHighlights", menuName = "Scriptable Objects/HierarchyHighlights")]
     public class HierarchyHighlights : ScriptableSingleton<HierarchyHighlights>
     {
         public List<ComponentHighlightSettings> highlightSettings = new List<ComponentHighlightSettings>();
+        public Texture2D invokeTexture2D;
     }
 
     [Serializable]

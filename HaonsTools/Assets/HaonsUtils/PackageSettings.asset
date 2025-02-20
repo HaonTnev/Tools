@@ -13,20 +13,22 @@ MonoBehaviour:
   m_Name: PackageSettings
   m_EditorClassIdentifier: 
   domainName: com
-  companyName: company
+  companyName: haon.tnev
   useSettingsCompanyName: 1
-  packageName: package-name
+  packageName: haonstools
   useSettingsProductName: 1
-  version: 0.0.0
+  version: 0.9.3
   useSettingsVersion: 1
-  displayName: 
+  displayName: HaonsTools
   _useSettingsProductName: 1
   description: 
-  unity: 2021.3
+  unity: 6000.0
   useCurrentUnityVersion: 1
-  unityRelease: .0f1
+  unityRelease: 24f1
   useCurrentUnityRelease: 1
-  _dependencies: []
+  _dependencies:
+  - name: com.unity.nuget.newtonsoft-json
+    version: 3.2.1
   documentationUrl: https://
   changelogUrl: https://
   licensesUrl: 
@@ -37,7 +39,7 @@ MonoBehaviour:
     description: This is a sample.
     path: Samples~/Sample
   author:
-    name: Author
+    name: Haon.Tnev
     useSettingsCompanyName: 1
     email: author@mail.com
     url: https://

@@ -1,28 +1,25 @@
-﻿
-using Haon.Utils;
+﻿using Haon.Utils;
+using UnityEngine;
 
-namespace DefaultNamespace
-{
-    public class Foo : ISaveData
+
+public class Foo : MonoBehaviour
     {
         public string bla = "bla";
         public Foo()
         {
-            this.Register();
-            
+        }
+        
+        public void LoadData(Haon.Utils.SaveData data)
+        {
+            throw new System.NotImplementedException();
         }
 
-        public void LoadData(SaveData data)
+        public void SaveData(ref Haon.Utils.SaveData data)
         {
-            bla = data.bla;
-        }
-
-        public void SaveData(ref SaveData data)
-        {
-            data.bla = bla;
+            throw new System.NotImplementedException();
         }
     }
-}
+
 
 namespace Haon.Utils
 {

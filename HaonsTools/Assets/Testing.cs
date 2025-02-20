@@ -1,10 +1,9 @@
 ﻿using System;
-using DefaultNamespace;
 using Haon.Utils;
 using UnityEngine;
 
 
-    public class Testing : MonoBehaviour, ISaveData
+    public class Testing : MonoBehaviour
     {
         [SerializeField] private int[] ints = new[] { 1, 2, 3 };
 

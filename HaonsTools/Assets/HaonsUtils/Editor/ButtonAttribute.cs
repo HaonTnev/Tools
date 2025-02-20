@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Haon.Utils
+namespace Haon.Utils.Editor
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class ButtonAttribute : PropertyAttribute

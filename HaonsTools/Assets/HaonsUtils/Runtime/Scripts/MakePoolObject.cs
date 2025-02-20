@@ -1,5 +1,3 @@
-using System;
-using Haon.Utils;
 using UnityEngine;
 
 namespace Haon.Utils
@@ -10,7 +8,8 @@ namespace Haon.Utils
         {
             if (ObjectPool.Instance != null)
             {
-                //Tag
+                //Thought I would make the Pool cool by giving you the option to add new items at runtime.
+                //But unity does not allow the creation of tags during runtime. 
                 var newPoolItem = new PoolItem();
                 newPoolItem.prefab = this.gameObject;
                 gameObject.tag = newTag;

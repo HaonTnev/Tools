@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace HaonsUtils.Editor
 {
@@ -42,6 +40,7 @@ namespace HaonsUtils.Editor
                         
                     if (obj != null && obj.GetComponent(HierarchyHighlights.instance.highlightSettings[i].componentType.GetClass()))
                     {
+                        // revision needed to combine with more options of configuration
                         /*// Change background color
                         EditorGUI.DrawRect(selectionRect, HierarchyHighlights.instance.highlightSettings[i].backgroundColor);
 

@@ -7,6 +7,41 @@ namespace Haon.Utils
     public static class ExtensionMethods
     {
         /// <summary>
+        /// Prints the name of the game object to the console.
+        /// </summary>
+        /// <param name="instance"></param>
+        public static void PrintName(this GameObject instance)
+        {
+            Debug.Log(instance.name);
+        }
+        /// <summary>
+        /// Smoothly moves the toMove transform towards the target so it reaches it after duration.
+        /// </summary>
+        /// <param name="toMove">The transform you want to manipulate</param>
+        /// <param name="target">The target position the transform should end up.</param>
+        /// <param name="duration">The amount of time the operation should take</param>
+        /// <returns></returns>
+        public static IEnumerator LerpTowards(this GameObject toMove, Vector3 target, float duration)
+        {
+            float time = 0.0f;
+            Vector3 pos = toMove.transform.position;
+            
+            while (time < duration)
+            {
+                Vector3 newPos = new Vector3();
+                newPos.x = Mathf.Lerp(pos.x, target.x, time/duration);
+                newPos.y = Mathf.Lerp(pos.y, target.y, time/duration);
+                newPos.z = Mathf.Lerp(pos.z, target.y, time/duration);
+                
+                toMove.transform.position = newPos;
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            toMove.transform.position = target;
+        }
+        
+        /// <summary>
         /// Searches for a component on the target. If it exists returns it, otherwise creates and returns it. 
         /// </summary>
         /// <param name="target"> The game object in question.</param>
@@ -69,27 +104,13 @@ namespace Haon.Utils
             jointDrive.positionSpring = value;
             joint.slerpDrive = jointDrive;
         }
-    }
-
-    public interface ILerpTowards
-    {
-        public IEnumerator LerpTowards(Transform toMove, Vector3 target, float duration)
+        /// <summary>
+        /// Looks at main camera.
+        /// </summary>
+        /// <param name="instance">The transform to rotate</param>
+        public static void RotateToCamera(this Transform instance)
         {
-            float time = 0.0f;
-
-            while (time < duration)
-            {
-                Vector3 newPos = new Vector3();
-                newPos.x = Mathf.Lerp(toMove.position.x, target.x, time / duration);
-                newPos.y = Mathf.Lerp(toMove.position.y, target.y, time / duration);
-                newPos.z = Mathf.Lerp(toMove.position.z, target.y, time / duration);
-                
-
-                time += Time.deltaTime;
-                yield return null;
-            }
-
+            instance.LookAt(Camera.main.transform);
         }
-        
     }
 }

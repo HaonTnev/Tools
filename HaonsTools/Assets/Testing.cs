@@ -1,18 +1,38 @@
-﻿using Haon.Utils;
+﻿using System;
+using DefaultNamespace;
+using Haon.Utils;
 using UnityEngine;
 
-namespace DefaultNamespace
-{
-    public class Testing : MonoSingleton<Testing>
+
+    public class Testing : MonoBehaviour, ISaveData
     {
-        [ContextMenu("Spawn Ball")]
-        public void GetBallFromPool()
+        [SerializeField] private int[] ints = new[] { 1, 2, 3 };
+
+        private Foo foo;
+        private void Awake()
         {
-            Debug.Log("start");
-            var ball = ObjectPool.Instance.GetItemByTag("Ball");
-            ball.transform.position = transform.position;
-            Debug.Log("finish");
+            foo = new Foo();
+            Debug.Log(foo.bla);
+            transform.RotateToCamera();
         }
-   
+
+        public void LoadData(SaveData data)
+        {
+            ints[0] = data.counter;
+        }
+        
+
+        public void SaveData(ref SaveData data)
+        {
+            data.counter = ints[2];
+        }
     }
-}
+
+    namespace Haon.Utils
+    {
+        public partial class SaveData
+        {
+            public int counter = 0;
+        }
+    }
+    

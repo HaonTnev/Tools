@@ -1,14 +1,34 @@
-﻿using System;
+﻿
 using Haon.Utils;
-using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Foo : MonoBehaviour
+    public class Foo : ISaveData
     {
-        private void OnCollisionEnter(Collision other)
+        public string bla = "bla";
+        public Foo()
         {
-            other.gameObject.SetInactive();
+            this.Register();
+            
         }
+
+        public void LoadData(SaveData data)
+        {
+            bla = data.bla;
+        }
+
+        public void SaveData(ref SaveData data)
+        {
+            data.bla = bla;
+        }
+    }
+}
+
+namespace Haon.Utils
+{
+    public partial class SaveData
+    {
+        public string bla = ""; 
+        
     }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "HaonsUtils",
+    "name": "HaonsUtils.Editor",
     "rootNamespace": "Haon.Utils",
     "references": [],
     "includePlatforms": [],

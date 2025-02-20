@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Haon.Utils
+namespace Haon.Utils.Editor
 {
 #if UNITY_EDITOR
     [CustomEditor(typeof(Object), true)]

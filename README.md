@@ -29,21 +29,20 @@ It includes:
 
     - Save system to store your games progress
         NOTE: that the save system as of now will only Save MonoBehaviour data.
-        To make use of it make a game boject and add the SaveDataManager to it, which inherits from MonoSingleton
+        To make use of it make a game oject and add the SaveDataManager to it, which inherits from MonoSingleton
         In order to save your own files implement the ISaveData interface in your scripts. 
         Then you have to extend the SaveData class by whatever you wish to store inside it. 
         Since it is a partial class you can do so quite easily. 
+        To do so you need a Assembly reference to Haon.Utils in your project 
         Make sure you are extending it inside of the namespace Haon.Utils!!!
 
-    - A Hierarchy highlight system which 
+    - A Hierarchy highlight system 
         It lets you configure special icons to show up in the hierachy 
         on game objects with a component you specify. 
-        To use it locate the HierachyHighlight scriptable singleton. 
-        It should be located inside the Editor folder of the package. 
-        In that asset, specify which script you want to highlight and which icon you want the highlight to be.
+        To use it go to Tools-> Hierachy Highlight Settings
+        There, specify which script you want to highlight and which icon you want the highlight to be.
         Some icons are provided by the package. But feel free to use your own. 
-        NOTE: that the Object Pool and EventListner are highligted by default. 
-            If you do not wish this, simply remove them from the Scriptable singleton. 
+        
         NOTE: There will be an error saying "ScriptableSingleton already exists. Did you query the singleton in a constructor?"
             I do not know how to get rid of this. But it doesen't seem to impact the functionality. 
     

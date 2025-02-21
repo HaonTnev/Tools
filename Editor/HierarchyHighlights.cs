@@ -1,15 +1,35 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
 namespace Haon.Utils
 {
-    [CreateAssetMenu(fileName = "HierarchyHighlights", menuName = "Scriptable Objects/HierarchyHighlights")]
+    [FilePath("Assets/Settings/HierarchyHighlights.asset", FilePathAttribute.Location.ProjectFolder)]
     public class HierarchyHighlights : ScriptableSingleton<HierarchyHighlights>
     {
         public List<ComponentHighlightSettings> highlightSettings = new List<ComponentHighlightSettings>();
         public Texture2D invokeTexture2D;
+        
+        protected HierarchyHighlights(){}
+        public static HierarchyHighlights GetOrCreateSettings()
+        {
+            var instance = HierarchyHighlights.instance;
+            instance.Save(true);
+            return instance;
+        }
+
+        public void SaveChanges(bool b)
+        {
+            Save(b);
+        }
+        [MenuItem("Tools/Create Hierarchy Highlights Asset")]
+        public static void CreateAsset()
+        {
+            HierarchyHighlights.instance.Save(true);
+            Debug.Log("HierarchyHighlights.asset created at Assets/Settings/");
+        }
     }
 
     [Serializable]

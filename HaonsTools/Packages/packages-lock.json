@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.defaultcompany.savesystem": {
-      "version": "https://github.com/AaronHoehn/SaveSystem.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e19eaf89171d388677901df5ac43a08ebdf8c325"
-    },
     "com.unity.ai.navigation": {
       "version": "2.0.4",
       "depth": 0,
@@ -53,7 +46,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.31",
+      "version": "3.0.34",
       "depth": 0,
       "source": "registry",
       "dependencies": {

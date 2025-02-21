@@ -17,4 +17,6 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 515fa746a7a42184a997c3db86c4d53a, type: 3}
   - componentType: {fileID: 11500000, guid: 136bdf013d614889a2612a27bd87a130, type: 3}
     icon: {fileID: 2800000, guid: 5146fe55454d9e843917062747bb3ad9, type: 3}
+  - componentType: {fileID: 11500000, guid: 626d97057e188124dbc04c195020b45d, type: 3}
+    icon: {fileID: 2800000, guid: d7928c334c42e114c96b4cef3dc14d66, type: 3}
   invokeTexture2D: {fileID: 2800000, guid: f29e26df0e3ea36478030c4df967c1a8, type: 3}

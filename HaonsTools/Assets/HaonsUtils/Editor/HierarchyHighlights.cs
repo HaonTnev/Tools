@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,23 +12,32 @@ namespace Haon.Utils
         public Texture2D invokeTexture2D;
         
         protected HierarchyHighlights(){}
+        
+        /// <summary>
+        /// A way to get the instance. Use HierarchyHighlights.instance instead. 
+        /// </summary>
+        /// <returns>HierarchyHighlights.instance</returns>
         public static HierarchyHighlights GetOrCreateSettings()
         {
             var instance = HierarchyHighlights.instance;
             instance.Save(true);
             return instance;
         }
-
+        /// <summary>
+        /// Save changes made to the asset. 
+        /// </summary>
+        /// <param name="b"></param>
         public void SaveChanges(bool b)
         {
             Save(b);
         }
-        [MenuItem("Tools/Create Hierarchy Highlights Asset")]
-        public static void CreateAsset()
-        {
-            HierarchyHighlights.instance.Save(true);
-            Debug.Log("HierarchyHighlights.asset created at Assets/Settings/");
-        }
+        // Deprecated 
+        // [MenuItem("Tools/Create Hierarchy Highlights Asset")]
+        // public static void CreateAsset()
+        // {
+        //     HierarchyHighlights.instance.Save(true);
+        //     Debug.Log("HierarchyHighlights.asset created at Assets/Settings/");
+        // }
     }
 
     [Serializable]
@@ -46,12 +54,16 @@ namespace Haon.Utils
     {
         static HighlightInHierarchy()
         {
-             EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
+            EditorApplication.delayCall += () =>
+            {
+
+                EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
+            };
         }
         
         private static void OnHierarchyGUI(int instanceID, Rect selectionRect) // Call the OnHierachyGUI obj will be all game objects I guess
         {
-            if (HierarchyHighlights.instance != null)
+            if (HierarchyHighlights.GetOrCreateSettings() != null)
             {
                 GameObject obj = EditorUtility.InstanceIDToObject(instanceID) as GameObject; // Get the current go
                 

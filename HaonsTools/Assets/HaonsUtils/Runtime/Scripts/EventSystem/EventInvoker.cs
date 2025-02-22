@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Haon.Utils.Editor;
 
 namespace Haon.Utils
 {
@@ -10,7 +11,7 @@ namespace Haon.Utils
         /// <summary>
         /// Invoke the Scriptable Events assigned to this game object. 
         /// </summary>
-        //[Button("Invoke")]
+        [Button("Invoke")]
         public void Invoke()
         {
             if (events == null || events.Count == 0)

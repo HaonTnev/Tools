@@ -26,7 +26,7 @@ namespace Haon.Utils
     
         static void DrawIcon(string path, ref int counter, int iconSize, Rect selectionRect, Action buttonMethod = null)
         {
-            Texture2D icon = AssetDatabase.LoadAssetAtPath<Texture2D>(path);//HierarchyHighlights.instance.invokeTexture2D);
+            Texture2D icon = (Texture2D)AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D));//HierarchyHighlights.instance.invokeTexture2D);
             
             if (icon != null)
             {

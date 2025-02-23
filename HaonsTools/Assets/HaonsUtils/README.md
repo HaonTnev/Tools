@@ -7,9 +7,17 @@ If you have any feedback, questions, remarks etc. feel free to reach out to me
 
 It includes:
     
-    - Some c# extension Methods
-        You can find them in the ExtensionMethods.cs
-    
+    - Some c# extension Methods contained in a DLL with the following:
+        PrintName(): Prints the name of the GameObject to the console.
+        LerpTowards(Vector3 target, float duration): Smoothly moves a GameObject towards a target position over a specified duration.
+        GetOrAddComponent<T>(): Gets a component of type T, or adds it if it doesn't exist.
+        GetOrAddComponent(Type type): Gets a component of the specified type, or adds it if it doesn't exist.
+        SetInactive(): Sets a GameObject to inactive.
+        SetActive(): Sets a GameObject to active.
+        SetSlerpDrivePositionSpring(float value): Sets the position spring of a ConfigurableJoint's slerp drive.
+        RotateToCamera(): Rotates a Transform to face the main camera.
+
+
     - Singleton pattern for pure c# classes to inherit from. Making them a singleton instantly
         To use it just inherit from Singleton<T> where T is your class
 
@@ -49,6 +57,6 @@ It includes:
     - A component which lets you configure scene Icons in scene view
         To use it add the SceneIcon component to your game object
 
-    - A DLL containing all of theabove mentioned
+    
 
 Thank you for existing & have a great day!

@@ -18,16 +18,16 @@ namespace Haon.Utils
                 if (obj != null &&  obj.GetComponent<EventInvoker>())
                 {
                     var eventsInvoker = obj.GetComponent<EventInvoker>();
-                    DrawIcon("Trumpet_icon.png",ref counter,  100, selectionRect, eventsInvoker.Invoke);
+                    var path = Application.dataPath + "Packages/HaonsTools/Editor/Editor Default Resources/TrumpetI_icon.png";
+                    DrawIcon(path,ref counter,  100, selectionRect, eventsInvoker.Invoke);
                 }
             };
         }
     
         static void DrawIcon(string path, ref int counter, int iconSize, Rect selectionRect, Action buttonMethod = null)
         {
-            Texture2D icon = HierarchyHighlights.instance.invokeTexture2D;
+            Texture2D icon = AssetDatabase.LoadAssetAtPath<Texture2D>(path);//HierarchyHighlights.instance.invokeTexture2D);
             
-            //Debug.Log("WTF");
             if (icon != null)
             {
                 iconSize = Mathf.Min(iconSize, (int)selectionRect.height);

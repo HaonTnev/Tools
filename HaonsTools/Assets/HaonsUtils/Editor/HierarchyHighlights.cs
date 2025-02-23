@@ -9,10 +9,34 @@ namespace Haon.Utils
     public class HierarchyHighlights : ScriptableSingleton<HierarchyHighlights>
     {
         public List<ComponentHighlightSettings> highlightSettings = new List<ComponentHighlightSettings>();
-        public Texture2D invokeTexture2D;
-        
-        protected HierarchyHighlights(){}
-        
+
+
+        protected HierarchyHighlights() {}
+
+        private void OnEnable()
+        {
+            bool hasObjectPool = false;
+            foreach (var componentHighlightSettings in highlightSettings)
+            { 
+                var path = "Packages/com.haon.tnev.haonstools/Runtime/Scripts/ObjectPool.cs";
+                if (componentHighlightSettings.componentType == (MonoScript)AssetDatabase.LoadAssetAtPath(path, typeof(MonoScript)))
+                {
+                    hasObjectPool = true;
+                    break;
+                }
+            }
+            if (!hasObjectPool)
+            {
+                var poolHighlightSettings = new ComponentHighlightSettings();
+                var path = "Packages/com.haon.tnev.haonstools/HighlightIcons/Pool.png";
+                poolHighlightSettings.icon = (Texture2D)AssetDatabase.LoadAssetAtPath(path, typeof(Texture2D));
+                path = "Packages/com.haon.tnev.haonstools/Runtime/Scripts/ObjectPool.cs";
+                poolHighlightSettings.componentType = (MonoScript)AssetDatabase.LoadAssetAtPath(path, typeof(MonoScript));
+                highlightSettings.Add(poolHighlightSettings);
+            }
+            
+        }
+
         /// <summary>
         /// A way to get the instance. Use HierarchyHighlights.instance instead. 
         /// </summary>

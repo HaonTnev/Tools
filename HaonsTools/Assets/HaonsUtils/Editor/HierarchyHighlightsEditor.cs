@@ -27,7 +27,6 @@ namespace Haon.Utils
             
             SerializedObject serializedObject = new SerializedObject(settings);
             EditorGUILayout.PropertyField(serializedObject.FindProperty("highlightSettings"), true); 
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("invokeTexture2D"));
 
             if (serializedObject.ApplyModifiedProperties())
             {

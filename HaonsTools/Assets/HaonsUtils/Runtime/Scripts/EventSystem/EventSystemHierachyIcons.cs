@@ -19,7 +19,7 @@ namespace Haon.Utils
                 if (obj != null &&  obj.GetComponent<EventInvoker>())
                 {
                     var eventsInvoker = obj.GetComponent<EventInvoker>();
-                    var path = "Packages/com.haon.tnev.haonstools/Editor/Trumpet_icon.png";
+                    var path = "Packages/com.haon.tnev.haonstools/HighlightIcons/Trumpet_icon.png";
                     DrawIcon(path,ref counter,  100, selectionRect, eventsInvoker.Invoke);
                 }
             };

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace Haon.Utils
                 if (obj != null &&  obj.GetComponent<EventInvoker>())
                 {
                     var eventsInvoker = obj.GetComponent<EventInvoker>();
-                    var path = Application.dataPath + "Packages/com.haon.tnev.haonstools/Editor/Editor Default Resources/TrumpetI_icon.png";
+                    var path = "Packages/com.haon.tnev.haonstools/Editor/Trumpet_icon.png";
                     DrawIcon(path,ref counter,  100, selectionRect, eventsInvoker.Invoke);
                 }
             };
@@ -44,7 +45,7 @@ namespace Haon.Utils
             }
             else
             {
-                Debug.LogWarning($"Ichon at: {path} \n could not be found");
+                Debug.LogWarning($"Icon at: {path} \n could not be found");
             }
         }
     }

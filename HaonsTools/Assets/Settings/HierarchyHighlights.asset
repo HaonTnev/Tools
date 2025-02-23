@@ -19,7 +19,3 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 5146fe55454d9e843917062747bb3ad9, type: 3}
   - componentType: {fileID: 11500000, guid: 626d97057e188124dbc04c195020b45d, type: 3}
     icon: {fileID: 2800000, guid: 5146fe55454d9e843917062747bb3ad9, type: 3}
-  - componentType: {fileID: 0}
-    icon: {fileID: 0}
-  - componentType: {fileID: 0}
-    icon: {fileID: 0}

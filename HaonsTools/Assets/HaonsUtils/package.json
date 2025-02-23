@@ -12,8 +12,8 @@
   ],
   "samples": [
     {
-      "displayName": "Sample",
-      "description": "This is a sample.",
+      "displayName": "Sample Scene & Assets",
+      "description": "Includes Sample Scene & Icons",
       "path": "Samples~/Sample"
     }
   ],

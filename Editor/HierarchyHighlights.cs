@@ -9,8 +9,7 @@ namespace Haon.Utils
     public class HierarchyHighlights : ScriptableSingleton<HierarchyHighlights>
     {
         public List<ComponentHighlightSettings> highlightSettings = new List<ComponentHighlightSettings>();
-
-
+        
         protected HierarchyHighlights() {}
 
         private void OnEnable()
@@ -90,11 +89,9 @@ namespace Haon.Utils
             if (HierarchyHighlights.GetOrCreateSettings() != null)
             {
                 GameObject obj = EditorUtility.InstanceIDToObject(instanceID) as GameObject; // Get the current go
-                
+                int counter = 1;
                 for(int i = 0; i < HierarchyHighlights.instance.highlightSettings.Count; i ++)
                 {
-                    //if(HierarchyHighlights.instance.highlightSettings[i].componentType.GetClass() is MonoScript)
-                        
                     if (obj != null && obj.GetComponent(HierarchyHighlights.instance.highlightSettings[i].componentType.GetClass()))
                     {
                         // revision needed to combine with more options of configuration
@@ -106,9 +103,11 @@ namespace Haon.Utils
                         style.normal.textColor = HierarchyHighlights.instance.highlightSettings[i].textColor;
                         EditorGUI.LabelField(selectionRect, obj.name, style);*/
                     
-                        Rect iconRect = new Rect(selectionRect.xMax - 20, selectionRect.y, 16, 16);
+                        
+                        Rect iconRect = new Rect(selectionRect.xMax - 20 -(16*counter+3), selectionRect.y, 16, 16);
                         GUI.DrawTexture(iconRect, HierarchyHighlights.instance.highlightSettings[i].icon);
-                    
+                        counter++;
+
                     }
                 }
             }

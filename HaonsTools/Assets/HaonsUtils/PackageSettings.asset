@@ -17,18 +17,20 @@ MonoBehaviour:
   useSettingsCompanyName: 1
   packageName: haonstools
   useSettingsProductName: 1
-  version: 0.9.3
+  version: 1.0.0
   useSettingsVersion: 1
   displayName: HaonsTools
   _useSettingsProductName: 1
   description: 
   unity: 6000.0
   useCurrentUnityVersion: 1
-  unityRelease: 24f1
+  unityRelease: 40f1
   useCurrentUnityRelease: 1
   _dependencies:
   - name: com.unity.nuget.newtonsoft-json
     version: 3.2.1
+  - name: https://github.com/cisco108/UpmAutomations.git#upm
+    version: 0.0.1
   documentationUrl: https://
   changelogUrl: https://
   licensesUrl: 

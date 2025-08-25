@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.now-here.upm-automations": {
+      "version": "https://github.com/cisco108/UpmAutomations.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b0bc40d8298f8ee2a598353a80f840dc5f1d0274"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.6",
       "depth": 0,
